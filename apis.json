@@ -1,0 +1,57 @@
+{
+    "name": "RAML",
+    "description": "Design, Build, Test, Document, and Share Your APIs all with an easy to use, human-readable Spec.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1917-raml.jpg",
+    "tags": [
+        "definitions",
+        "have api",
+        "markdown"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/raml\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "RAML",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1917-raml.jpg",
+            "humanURL": "http:\/\/raml.org\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/raml-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/raml-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "http:\/\/open-raml.blogspot.com\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/open-raml.blogspot.com\/feeds\/posts\/default?alt=rss"
+        },
+        {
+            "type": "Email",
+            "url": "info@raml.org"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/ramlapi"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/raml.org\/"
+        }
+    ]
+}
