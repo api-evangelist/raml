@@ -1,0 +1,38 @@
+aid: raml
+name: RAML
+description: >-
+  RAML (RESTful API Modeling Language) is a YAML-based language for describing RESTful APIs with support for design patterns, reuse, and code generation.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - API Design
+  - Specification Language
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/raml/refs/heads/main/apis.yml
+created: '2026-03-25'
+modified: '2026-03-25'
+specificationVersion: '0.19'
+apis:
+  - aid: raml:raml
+    name: RAML
+    description: >-
+      RAML (RESTful API Modeling Language) is a YAML-based language for describing RESTful APIs with support for design patterns, reuse, and code generation.
+    humanURL: https://raml.org
+    tags:
+      - API Design
+      - Specification Language
+    properties:
+      - type: Documentation
+        url: https://raml.org/developers/raml-100-tutorial
+      - type: GitHub Repository
+        url: https://github.com/raml-org
+common:
+  - type: Website
+    url: https://raml.org
+  - type: Documentation
+    url: https://raml.org/developers/raml-100-tutorial
+  - type: GitHub Organization
+    url: https://github.com/raml-org
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
