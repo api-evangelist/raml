@@ -1,0 +1,47 @@
+{
+  "description": "Example of a simple RAML 1.0 API definition (represented as annotated JSON for reference)",
+  "note": "RAML documents are actually written in YAML starting with #%RAML 1.0",
+  "example_yaml": "#%RAML 1.0\ntitle: Hello World API\nversion: v1\nbaseUri: https://api.example.com/{version}\nmediaType: application/json\n\ntypes:\n  User:\n    type: object\n    properties:\n      id:\n        type: integer\n        description: Unique user identifier\n      name:\n        type: string\n        description: User's full name\n      email:\n        type: string\n        description: User's email address\n\n/users:\n  description: Collection of users\n  get:\n    description: Get all users\n    queryParameters:\n      limit:\n        type: integer\n        default: 25\n        description: Maximum number of users to return\n    responses:\n      200:\n        body:\n          application/json:\n            type: User[]\n  post:\n    description: Create a new user\n    body:\n      application/json:\n        type: User\n    responses:\n      201:\n        body:\n          application/json:\n            type: User\n\n/users/{userId}:\n  uriParameters:\n    userId:\n      type: integer\n      description: User ID\n  get:\n    description: Get a specific user\n    responses:\n      200:\n        body:\n          application/json:\n            type: User\n      404:\n        description: User not found",
+  "parsed_representation": {
+    "title": "Hello World API",
+    "version": "v1",
+    "baseUri": "https://api.example.com/v1",
+    "mediaType": "application/json",
+    "types": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "description": "Unique user identifier" },
+          "name": { "type": "string", "description": "User's full name" },
+          "email": { "type": "string", "description": "User's email address" }
+        }
+      }
+    },
+    "resources": [
+      {
+        "relativeUri": "/users",
+        "description": "Collection of users",
+        "methods": [
+          {
+            "method": "get",
+            "description": "Get all users",
+            "queryParameters": {
+              "limit": { "type": "integer", "default": 25 }
+            },
+            "responses": {
+              "200": { "body": { "application/json": { "type": "User[]" } } }
+            }
+          },
+          {
+            "method": "post",
+            "description": "Create a new user",
+            "body": { "application/json": { "type": "User" } },
+            "responses": {
+              "201": { "body": { "application/json": { "type": "User" } } }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

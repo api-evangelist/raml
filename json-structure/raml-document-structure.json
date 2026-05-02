@@ -1,0 +1,74 @@
+{
+  "title": "RAML 1.0 Document Structure",
+  "description": "Structure documentation for RAML 1.0 API definitions",
+  "version": "1.0",
+  "structures": [
+    {
+      "name": "RAML Document (Root)",
+      "description": "The root of a RAML 1.0 API definition. Must begin with #%RAML 1.0.",
+      "fields": [
+        { "name": "title", "type": "string", "description": "API title (required)", "required": true },
+        { "name": "version", "type": "string", "description": "API version", "required": false },
+        { "name": "baseUri", "type": "string (URI)", "description": "Base URI for all resources", "required": false },
+        { "name": "baseUriParameters", "type": "object", "description": "URI template parameters for baseUri", "required": false },
+        { "name": "protocols", "type": "array<string>", "description": "HTTP or HTTPS", "required": false },
+        { "name": "mediaType", "type": "string | array<string>", "description": "Default media type(s)", "required": false },
+        { "name": "description", "type": "string", "description": "API description (Markdown)", "required": false },
+        { "name": "documentation", "type": "array<DocumentationItem>", "description": "Documentation sections", "required": false },
+        { "name": "types", "type": "object<TypeDeclaration>", "description": "Named type declarations", "required": false },
+        { "name": "traits", "type": "object<TraitDeclaration>", "description": "Reusable method traits", "required": false },
+        { "name": "resourceTypes", "type": "object", "description": "Reusable resource patterns", "required": false },
+        { "name": "annotationTypes", "type": "object<AnnotationType>", "description": "Custom annotation types", "required": false },
+        { "name": "securitySchemes", "type": "object<SecurityScheme>", "description": "Security scheme definitions", "required": false },
+        { "name": "securedBy", "type": "array", "description": "Default security schemes for all resources", "required": false },
+        { "name": "uses", "type": "object<string>", "description": "External library imports", "required": false },
+        { "name": "/{resource}", "type": "Resource", "description": "Resource definitions (paths starting with /)", "required": false }
+      ]
+    },
+    {
+      "name": "Resource",
+      "description": "Represents a URI path and its methods",
+      "fields": [
+        { "name": "displayName", "type": "string", "description": "Human-friendly name", "required": false },
+        { "name": "description", "type": "string", "description": "Resource description", "required": false },
+        { "name": "uriParameters", "type": "object<TypeDeclaration>", "description": "URI template parameter definitions", "required": false },
+        { "name": "is", "type": "array<string>", "description": "Applied traits", "required": false },
+        { "name": "type", "type": "string", "description": "Applied resource type", "required": false },
+        { "name": "securedBy", "type": "array", "description": "Applied security schemes", "required": false },
+        { "name": "get|post|put|delete|patch|head|options", "type": "Method", "description": "HTTP method definitions", "required": false },
+        { "name": "/{nested}", "type": "Resource", "description": "Nested sub-resources", "required": false }
+      ]
+    },
+    {
+      "name": "Method",
+      "description": "An HTTP operation on a resource",
+      "fields": [
+        { "name": "displayName", "type": "string", "description": "Human-friendly method name", "required": false },
+        { "name": "description", "type": "string", "description": "Method description", "required": false },
+        { "name": "queryParameters", "type": "object<TypeDeclaration>", "description": "Query string parameters", "required": false },
+        { "name": "headers", "type": "object<TypeDeclaration>", "description": "Request headers", "required": false },
+        { "name": "body", "type": "object", "description": "Request body per media type", "required": false },
+        { "name": "responses", "type": "object<ResponseDeclaration>", "description": "Response definitions by HTTP status code", "required": false },
+        { "name": "is", "type": "array<string>", "description": "Applied traits", "required": false },
+        { "name": "securedBy", "type": "array", "description": "Applied security schemes", "required": false }
+      ]
+    },
+    {
+      "name": "TypeDeclaration",
+      "description": "A RAML 1.0 data type",
+      "fields": [
+        { "name": "type", "type": "string | array<string>", "description": "Base type or union", "required": false },
+        { "name": "properties", "type": "object<TypeDeclaration>", "description": "Object properties", "required": false },
+        { "name": "description", "type": "string", "description": "Type description", "required": false },
+        { "name": "required", "type": "boolean", "description": "Whether the field is required", "required": false },
+        { "name": "default", "type": "any", "description": "Default value", "required": false },
+        { "name": "example", "type": "any", "description": "Single example value", "required": false },
+        { "name": "examples", "type": "object", "description": "Named examples", "required": false },
+        { "name": "enum", "type": "array", "description": "Enumerated values", "required": false },
+        { "name": "pattern", "type": "string", "description": "Regex pattern (strings)", "required": false },
+        { "name": "minLength|maxLength", "type": "integer", "description": "String length constraints", "required": false },
+        { "name": "minimum|maximum", "type": "number", "description": "Numeric range constraints", "required": false }
+      ]
+    }
+  ]
+}

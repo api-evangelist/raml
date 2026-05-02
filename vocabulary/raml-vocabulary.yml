@@ -1,0 +1,145 @@
+vocabulary:
+  name: RAML Vocabulary
+  description: >-
+    Normative vocabulary for RAML (RESTful API Modeling Language), covering
+    core specification constructs, MUST/SHOULD/MAY conformance terms, and
+    key concepts from RAML 1.0.
+  version: '1.0'
+  created: '2026-05-02'
+  terms:
+    - term: RAML
+      definition: >-
+        RESTful API Modeling Language. A YAML 1.2-based specification language
+        for describing RESTful HTTP APIs. Developed by MuleSoft and Salesforce.
+        Current stable version is RAML 1.0 (specification archived February 2024).
+      tags:
+        - Standard
+        - Core
+
+    - term: Resource
+      definition: >-
+        A URI path in a RAML definition, always starting with /. Resources
+        define the URL structure of the API and contain method definitions.
+        Nested resources represent hierarchical paths.
+      tags:
+        - Core
+        - Structure
+
+    - term: Method
+      definition: >-
+        An HTTP operation (GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS)
+        defined on a resource. Contains query parameters, headers, request
+        body, and response definitions.
+      tags:
+        - Core
+        - HTTP
+
+    - term: Type
+      definition: >-
+        A RAML 1.0 data type declaration. Types form a unified system
+        replacing separate body, parameter, and header schemas. Supports
+        object, array, scalar (string, number, integer, boolean, date),
+        union types, and inheritance.
+      tags:
+        - Core
+        - Types
+
+    - term: Trait
+      definition: >-
+        A reusable group of method-level characteristics (query parameters,
+        headers, responses) that can be applied to multiple methods using
+        the `is` keyword. Traits minimize repetition and promote consistency.
+      tags:
+        - Reuse
+        - Core
+
+    - term: Resource Type
+      definition: >-
+        A reusable pattern defining the methods and properties of a resource.
+        Applied using the `type` keyword on a resource. Enables consistent
+        treatment of common resource patterns like collections and members.
+      tags:
+        - Reuse
+        - Core
+
+    - term: Annotation
+      definition: >-
+        A typed metadata extension mechanism in RAML 1.0. Annotations are
+        declared as `annotationTypes` and applied using `(annotationName)`
+        syntax anywhere in the document. Enables vendor-specific extensions.
+      tags:
+        - Extensibility
+        - Metadata
+
+    - term: Library
+      definition: >-
+        A RAML fragment that exports named types, traits, resource types,
+        security schemes, and annotation types for reuse across multiple
+        APIs. Imported using the `uses` keyword.
+      tags:
+        - Reuse
+        - Modularity
+
+    - term: Overlay
+      definition: >-
+        A RAML fragment that adds or overrides metadata (documentation,
+        display names, annotations) on an existing API without changing
+        its behavior. Used for localization and governance separation.
+      tags:
+        - Modularity
+        - Extensions
+
+    - term: Extension
+      definition: >-
+        A RAML fragment that extends an existing API by adding or modifying
+        functional elements (new resources, methods, types). Distinct from
+        Overlay, which only adds non-functional metadata.
+      tags:
+        - Modularity
+        - Extensions
+
+    - term: Security Scheme
+      definition: >-
+        A RAML declaration of an authentication/authorization mechanism.
+        RAML 1.0 natively supports OAuth 1.0, OAuth 2.0, Basic Authentication,
+        Digest Authentication, Pass Through, and custom `x-` schemes.
+      tags:
+        - Security
+        - Authentication
+
+    - term: Base URI
+      definition: >-
+        The `baseUri` property defines the root URL for all resources in
+        the RAML document. Supports URI Template parameters enclosed in
+        curly braces (e.g., `https://api.example.com/{version}`).
+      tags:
+        - Core
+        - URL
+
+    - term: RAML Fragment
+      definition: >-
+        A partial RAML document intended for reuse. Fragment types include
+        DataType, Trait, ResourceType, AnnotationType, SecurityScheme,
+        Library, Overlay, and Extension. Must declare the fragment type
+        in the RAML header comment.
+      tags:
+        - Modularity
+        - Reuse
+
+    - term: webapi-parser
+      definition: >-
+        The raml-org/webapi-parser is the successor API specification parser
+        supporting RAML 0.8, RAML 1.0, OAS 2.0, and OAS 3.0 (beta). Written
+        in Scala/Java, it provides a unified model across specification formats.
+      tags:
+        - Tooling
+        - Parser
+
+    - term: ramldt2jsonschema
+      definition: >-
+        A CLI tool and JavaScript library (raml-org/ramldt2jsonschema) for
+        converting RAML 1.0 data types to JSON Schema and back. Supports
+        round-trip conversion between the two type systems.
+      tags:
+        - Tooling
+        - Conversion

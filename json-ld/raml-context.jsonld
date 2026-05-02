@@ -1,0 +1,92 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "raml": "https://raml.org/vocab#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+
+    "RAMLDocument": "raml:Document",
+    "Resource": "raml:Resource",
+    "Method": "raml:Method",
+    "TypeDeclaration": "raml:TypeDeclaration",
+    "Trait": "raml:Trait",
+    "ResourceType": "raml:ResourceType",
+    "SecurityScheme": "raml:SecurityScheme",
+    "AnnotationType": "raml:AnnotationType",
+    "Library": "raml:Library",
+
+    "title": "dcterms:title",
+    "description": "dcterms:description",
+    "version": {
+      "@id": "schema:version"
+    },
+    "baseUri": {
+      "@id": "raml:baseUri",
+      "@type": "xsd:anyURI"
+    },
+    "protocols": {
+      "@id": "raml:protocols",
+      "@container": "@list"
+    },
+    "mediaType": {
+      "@id": "raml:mediaType"
+    },
+    "types": {
+      "@id": "raml:types",
+      "@type": "@id"
+    },
+    "traits": {
+      "@id": "raml:traits",
+      "@type": "@id"
+    },
+    "resourceTypes": {
+      "@id": "raml:resourceTypes",
+      "@type": "@id"
+    },
+    "securitySchemes": {
+      "@id": "raml:securitySchemes",
+      "@type": "@id"
+    },
+    "annotationTypes": {
+      "@id": "raml:annotationTypes",
+      "@type": "@id"
+    },
+    "securedBy": {
+      "@id": "raml:securedBy",
+      "@container": "@list"
+    },
+    "uses": {
+      "@id": "raml:uses",
+      "@type": "@id"
+    },
+    "queryParameters": {
+      "@id": "raml:queryParameters"
+    },
+    "headers": {
+      "@id": "raml:headers"
+    },
+    "body": {
+      "@id": "raml:body"
+    },
+    "responses": {
+      "@id": "raml:responses"
+    },
+    "properties": {
+      "@id": "raml:properties"
+    },
+    "required": {
+      "@id": "raml:required",
+      "@type": "xsd:boolean"
+    },
+    "example": "raml:example",
+    "examples": "raml:examples",
+    "displayName": "raml:displayName",
+    "uriParameters": "raml:uriParameters",
+    "is": {
+      "@id": "raml:appliedTraits",
+      "@container": "@list"
+    }
+  }
+}

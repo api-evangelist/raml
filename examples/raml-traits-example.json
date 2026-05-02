@@ -1,0 +1,11 @@
+{
+  "description": "Example showing RAML 1.0 traits for reusable method behaviors",
+  "note": "Traits allow defining cross-cutting concerns like pagination and error responses once and applying them to multiple methods",
+  "example_yaml": "#%RAML 1.0\ntitle: Traits Example API\nversion: v1\n\ntraits:\n  pageable:\n    queryParameters:\n      limit:\n        type: integer\n        default: 25\n        minimum: 1\n        maximum: 100\n      offset:\n        type: integer\n        default: 0\n    responses:\n      400:\n        description: Bad pagination parameters\n\n  secured:\n    headers:\n      Authorization:\n        type: string\n        description: Bearer token\n        pattern: \"Bearer .+\"\n    responses:\n      401:\n        description: Unauthorized\n      403:\n        description: Forbidden\n\n/items:\n  get:\n    is: [pageable, secured]\n    description: Get items with pagination and authentication\n    responses:\n      200:\n        description: Paginated item list",
+  "key_concepts": {
+    "trait_definition": "Defined under the 'traits' root key",
+    "trait_application": "Applied to methods using the 'is' keyword as a list",
+    "parameterization": "Traits can accept parameters using <<paramName>> syntax",
+    "multiple_traits": "A method can apply multiple traits in sequence"
+  }
+}

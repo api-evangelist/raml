@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raml.org/schemas/raml-document",
+  "title": "RAML 1.0 Document",
+  "description": "JSON Schema representation of key structural elements in a RAML 1.0 API definition",
+  "type": "object",
+  "required": ["title"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "The title of the API (required root property)"
+    },
+    "version": {
+      "type": "string",
+      "description": "The version of the API (e.g., v1, 2.0)"
+    },
+    "baseUri": {
+      "type": "string",
+      "format": "uri",
+      "description": "The base URI for all resources in the API"
+    },
+    "protocols": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["HTTP", "HTTPS"]
+      },
+      "description": "Supported protocols"
+    },
+    "mediaType": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      ],
+      "description": "Default media type for request and response bodies"
+    },
+    "description": {
+      "type": "string",
+      "description": "Overall API description"
+    },
+    "documentation": {
+      "type": "array",
+      "description": "User documentation sections",
+      "items": {
+        "$ref": "#/$defs/DocumentationItem"
+      }
+    },
+    "types": {
+      "type": "object",
+      "description": "Named data type declarations",
+      "additionalProperties": {
+        "$ref": "#/$defs/TypeDeclaration"
+      }
+    },
+    "traits": {
+      "type": "object",
+      "description": "Reusable method-level behaviors",
+      "additionalProperties": {
+        "$ref": "#/$defs/TraitDeclaration"
+      }
+    },
+    "resourceTypes": {
+      "type": "object",
+      "description": "Reusable resource patterns",
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "annotationTypes": {
+      "type": "object",
+      "description": "Custom annotation type declarations",
+      "additionalProperties": {
+        "$ref": "#/$defs/AnnotationType"
+      }
+    },
+    "securitySchemes": {
+      "type": "object",
+      "description": "Security scheme definitions",
+      "additionalProperties": {
+        "$ref": "#/$defs/SecurityScheme"
+      }
+    },
+    "uses": {
+      "type": "object",
+      "description": "External library imports",
+      "additionalProperties": {
+        "type": "string",
+        "description": "Path or URL to a RAML library"
+      }
+    }
+  },
+  "$defs": {
+    "DocumentationItem": {
+      "type": "object",
+      "required": ["title", "content"],
+      "properties": {
+        "title": { "type": "string" },
+        "content": { "type": "string" }
+      }
+    },
+    "TypeDeclaration": {
+      "type": "object",
+      "description": "A RAML data type declaration",
+      "properties": {
+        "type": {
+          "oneOf": [
+            { "type": "string" },
+            { "type": "array", "items": { "type": "string" } }
+          ],
+          "description": "Base type or union of types"
+        },
+        "properties": {
+          "type": "object",
+          "description": "Object properties (for object types)",
+          "additionalProperties": {
+            "$ref": "#/$defs/TypeDeclaration"
+          }
+        },
+        "description": { "type": "string" },
+        "required": { "type": "boolean" },
+        "default": {},
+        "example": {},
+        "examples": {
+          "type": "object",
+          "additionalProperties": {}
+        },
+        "enum": {
+          "type": "array",
+          "description": "Allowed enumeration values"
+        },
+        "pattern": {
+          "type": "string",
+          "description": "Regex pattern for string types"
+        },
+        "minLength": { "type": "integer" },
+        "maxLength": { "type": "integer" },
+        "minimum": { "type": "number" },
+        "maximum": { "type": "number" }
+      }
+    },
+    "TraitDeclaration": {
+      "type": "object",
+      "description": "A reusable method trait",
+      "properties": {
+        "description": { "type": "string" },
+        "headers": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/TypeDeclaration"
+          }
+        },
+        "queryParameters": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/TypeDeclaration"
+          }
+        },
+        "responses": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/ResponseDeclaration"
+          }
+        }
+      }
+    },
+    "ResponseDeclaration": {
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "headers": {
+          "type": "object"
+        },
+        "body": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/TypeDeclaration"
+          }
+        }
+      }
+    },
+    "AnnotationType": {
+      "type": "object",
+      "description": "A custom annotation type",
+      "properties": {
+        "type": { "type": "string" },
+        "description": { "type": "string" },
+        "allowedTargets": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "SecurityScheme": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["OAuth 1.0", "OAuth 2.0", "Basic Authentication", "Digest Authentication", "Pass Through", "x-other"]
+        },
+        "description": { "type": "string" },
+        "displayName": { "type": "string" },
+        "settings": {
+          "type": "object",
+          "description": "Type-specific security settings"
+        }
+      }
+    }
+  }
+}
