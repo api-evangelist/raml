@@ -41,7 +41,7 @@ apis:
         url: https://raml.org/developers/raml-100-tutorial
       - type: Specification
         url: https://github.com/raml-org/raml-spec
-      - type: GitHub Repository
+      - type: GitHubRepository
         url: https://github.com/raml-org/raml-spec
       - type: JSONSchema
         url: json-schema/raml-document-schema.json
@@ -54,7 +54,7 @@ common:
     url: https://raml.org/developers/raml-100-tutorial
   - type: Specification
     url: https://github.com/raml-org/raml-spec
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/raml-org
   - type: Forum
     url: https://forum.raml.org
