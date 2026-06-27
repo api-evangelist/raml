@@ -56,7 +56,7 @@ common:
     url: https://github.com/raml-org/raml-spec
   - type: GitHubOrganization
     url: https://github.com/raml-org
-  - type: Forum
+  - type: Forums
     url: https://forum.raml.org
   - type: Parser JavaScript
     url: https://github.com/raml-org/raml-js-parser-2
