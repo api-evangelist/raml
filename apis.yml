@@ -48,6 +48,8 @@ apis:
       - type: JSONStructure
         url: json-structure/raml-document-structure.json
 common:
+  - type: DomainSecurity
+    url: security/raml-domain-security.yml
   - type: Website
     url: https://raml.org
   - type: Documentation
