@@ -9,6 +9,17 @@ description: >-
   specification and related tooling, all of which are archived and read-only
   as of February 2024.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
@@ -60,6 +71,10 @@ apis:
       - type: JSONStructure
         url: json-structure/raml-document-structure.json
 common:
+  - type: IssueTracker
+    url: https://github.com/raml-org/raml-spec/issues
+  - type: Releases
+    url: https://github.com/raml-org/raml-spec/releases
   - type: DomainSecurity
     url: security/raml-domain-security.yml
   - type: Website
