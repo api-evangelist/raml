@@ -1,4 +1,4 @@
-# RAML
+# raml
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,76 +64,22 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-RAML (RESTful API Modeling Language) is a YAML-based specification language for describing RESTful APIs with first-class support for reusable patterns, traits, resource types, annotations, libraries, overlays, and extensions. Developed by MuleSoft and Salesforce; RAML 1.0 is the current stable version. The raml-org GitHub organization repositories were archived read-only in February 2024.
+## raml on APIs.io
 
-- **Website:** [raml.org](https://raml.org)
-- **Specification:** [github.com/raml-org/raml-spec](https://github.com/raml-org/raml-spec)
-- **GitHub Organization:** [github.com/raml-org](https://github.com/raml-org)
-- **Documentation:** [raml.org/developers/raml-100-tutorial](https://raml.org/developers/raml-100-tutorial)
-- **Forum:** [forum.raml.org](https://forum.raml.org)
+Everything profiled for raml is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/raml/](https://apis.io/providers/raml/)** — or go straight to one of the APIs or properties below.
 
-## Scope
+## API Evangelist rating
 
-- **Type:** Index (Standard)
+Not yet rated. See [apis.io/providers/raml/](https://apis.io/providers/raml/).
 
-## Tags
+## How this profile is made
 
-API Design, Specification Language, Standards, YAML, REST, API Modeling
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-## Specification
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for raml: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### RAML Specification
-The canonical RAML 1.0 specification is at [github.com/raml-org/raml-spec](https://github.com/raml-org/raml-spec).
+## Open an issue
 
-Key constructs in RAML 1.0:
-- **Types**: Unified type system replacing separate schema constructs
-- **Traits**: Reusable method-level behaviors (applied with `is:`)
-- **Resource Types**: Reusable resource patterns (applied with `type:`)
-- **Annotations**: Typed extensibility mechanism
-- **Libraries**: Modular reuse via `uses:` imports
-- **Overlays / Extensions**: Separated metadata and functional enhancement layers
-- **Security Schemes**: OAuth 1.0/2.0, Basic, Digest, Pass Through
-
-## Tooling Ecosystem
-
-| Tool | Repository | Description |
-|---|---|---|
-| webapi-parser | [raml-org/webapi-parser](https://github.com/raml-org/webapi-parser) | Multi-format parser: RAML 0.8, 1.0, OAS 2.0, OAS 3.0 |
-| raml-js-parser-2 | [raml-org/raml-js-parser-2](https://github.com/raml-org/raml-js-parser-2) | JavaScript RAML parser |
-| raml-php-parser | [raml-org/raml-php-parser](https://github.com/raml-org/raml-php-parser) | PHP RAML parser |
-| ramldt2jsonschema | [raml-org/ramldt2jsonschema](https://github.com/raml-org/ramldt2jsonschema) | Convert RAML types ↔ JSON Schema |
-| raml-tck | [raml-org/raml-tck](https://github.com/raml-org/raml-tck) | Test Compatibility Kit for RAML 1.0 |
-| raml-mock-service | [raml-org/raml-mock-service](https://github.com/raml-org/raml-mock-service) | Generate mock services from RAML |
-
-## Artifacts
-
-### JSON Schema
-| File | Description |
-|---|---|
-| [json-schema/raml-document-schema.json](json-schema/raml-document-schema.json) | JSON Schema for RAML 1.0 document structure |
-
-### JSON Structure
-| File | Description |
-|---|---|
-| [json-structure/raml-document-structure.json](json-structure/raml-document-structure.json) | RAML 1.0 document structure documentation |
-
-### JSON-LD
-| File | Description |
-|---|---|
-| [json-ld/raml-context.jsonld](json-ld/raml-context.jsonld) | Linked data context for RAML vocabulary |
-
-### Examples
-| File | Description |
-|---|---|
-| [examples/raml-basic-api-example.json](examples/raml-basic-api-example.json) | Basic RAML 1.0 API definition example |
-| [examples/raml-traits-example.json](examples/raml-traits-example.json) | RAML traits usage example |
-
-### Vocabulary
-| File | Description |
-|---|---|
-| [vocabulary/raml-vocabulary.yml](vocabulary/raml-vocabulary.yml) | RAML normative vocabulary (constructs, conformance terms) |
-
-## Maintainers
-
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/raml/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
